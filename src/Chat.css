@@ -1,0 +1,10 @@
+
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .appnow{
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    width: 100vw;
+  }
+} 

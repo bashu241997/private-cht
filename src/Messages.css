@@ -1,0 +1,29 @@
+.messages {
+  height: calc(100vh - (200px));
+  overflow: auto;
+  flex: auto;
+  width : 100%;
+  padding: 10px 20px;
+}
+.css-y1c0xs::-webkit-scrollbar {
+  display: none;
+}
+ 
+.messages::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+.messages::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+@media only screen and (max-width: 600px) {
+  .messages {
+    height: calc(100vh - 90px);
+    overflow: auto;
+    flex: auto;
+    width : 100%;
+    padding: 10px 20px;
+  }
+}
