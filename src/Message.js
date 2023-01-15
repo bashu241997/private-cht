@@ -21,13 +21,13 @@ const Message = ({ message: { text, user }, name }) => {
   </div>
 </div> ) : ( isSentByCurrentUser ? (
     <div className="flex  items-end flex-col">
-      <div className="bg-amber-500 text-right px-4 py-2 m-2  rounded-2xl">
+      <div className="bg-stone-500 text-right px-4 py-1 m-2  rounded-2xl">
         <p className="text-white capitalize" style={{fontSize:"12px"}}>{ReactEmoji.emojify(text)}</p>
       </div>
     </div>
   ) : (
     <div className="flex justify-start items-start flex-col">
-      <div className="bg-gray-300 text-left px-4 m-2 py-2 rounded-2xl">
+      <div className="bg-blue-400 text-left px-4 m-2 py-1 rounded-2xl">
       <p className="pb-2" style={{fontSize:"10px"}}>@ {user}</p>
         <p className="text-black capitalize" style={{fontSize:"12px"}} >{ReactEmoji.emojify(text)}</p>
       </div>
