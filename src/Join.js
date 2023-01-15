@@ -23,11 +23,11 @@ export default function SignIn() {
           secure your life and privatize your conversations
         </div>
         <div
-          class="flex items-center capitalize text-gray-700 text-sm py-3"
+          className="flex items-center capitalize text-gray-700 text-sm py-3"
           role="alert"
         >
           <svg
-            class="fill-current w-16 h-16 mr-2"
+            className="fill-current w-16 h-16 mr-2"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
           >

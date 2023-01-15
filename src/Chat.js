@@ -8,7 +8,7 @@ import Close from "./icons/Close.svg";
 import "./Chat.css";
 import { useLocation, useNavigate } from "react-router-dom";
 
-const ENDPOINT = "https://chatapplicaton.herokuapp.com/";
+const ENDPOINT = "http://localhost:3003";
 
 let socket;
 
@@ -25,6 +25,7 @@ const Chat = () => {
   const [Copied, setCopied] = useState(false);
 
   useEffect(() => {
+    fetch(ENDPOINT).then(e=>console.log(e))
     const { name, room } = queryString.parse(location.search);
     socket = io(ENDPOINT);
 
@@ -104,14 +105,14 @@ const Chat = () => {
       <div className="bg-white flex flex-col justify-center items-center grow shadow-2xl m-8 appnow">
         {Copied && (
           <div
-            class="bg-slate-100 rounded-2xl text-black px-4 py-3 shadow-2xl fixed z-30 top-34"
+            className="bg-slate-100 rounded-2xl text-black px-4 py-3 shadow-2xl fixed z-30 top-34"
             style={{ width: "250px" }}
             role="alert"
           >
-            <div class="flex justify-center items-center">
-              <div class="py-1">
+            <div className="flex justify-center items-center">
+              <div className="py-1">
                 <svg
-                  class="fill-current h-6 w-6 text-white-500 mr-4"
+                  className="fill-current h-6 w-6 text-white-500 mr-4"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                 >
@@ -119,7 +120,7 @@ const Chat = () => {
                 </svg>
               </div>
               <div id="copy" onClick={() => handleCopyClick()}>
-                <p class="font-bold capitalize" style={{ fontSize: "12px" }}>
+                <p className="font-bold capitalize" style={{ fontSize: "12px" }}>
                   copied to clipboard
                 </p>
               </div>
@@ -128,14 +129,14 @@ const Chat = () => {
         )}
         {Timer && (
           <div
-            class="bg-blue-500 rounded-2xl text-white px-4 py-3 shadow-md fixed z-30 top-34"
+            className="bg-blue-500 rounded-2xl text-white px-4 py-3 shadow-md fixed z-30 top-34"
             style={{ width: "300px" }}
             role="alert"
           >
-            <div class="flex">
-              <div class="py-1">
+            <div className="flex">
+              <div className="py-1">
                 <svg
-                  class="fill-current h-6 w-6 text-white-500 mr-4"
+                  className="fill-current h-6 w-6 text-white-500 mr-4"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                 >
@@ -143,16 +144,16 @@ const Chat = () => {
                 </svg>
               </div>
               <div id="copy" onClick={() => handleCopyClick()}>
-                <p class="font-bold capitalize" style={{ fontSize: "12px" }}>
+                <p className="font-bold capitalize" style={{ fontSize: "12px" }}>
                   click to copy the invite link
                 </p>
-                <p class="text-sm" style={{ fontSize: "12px" }}>
+                <p className="text-sm" style={{ fontSize: "12px" }}>
                   {Invite}
                 </p>
               </div>
               <div
                 onClick={() => setTimer(false)}
-                class="py-1"
+                className="py-1"
                 style={{ width: "40px", height: "40px", objectFit: "cover" }}
               >
                 <img src={Close} alt="close" style={{ width: "100%" }} />
